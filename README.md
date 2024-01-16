@@ -1,5 +1,5 @@
 ### Hi there 👋
-My name is Emil Sunnerdahl and this is my personal website. I am a software engineer and currently studying computer science in Sweden.
+My name is Emil Sunnerdahl and I am currently studying computer science in Sweden.
 <!--
 **emilsunnerdahl/emilsunnerdahl** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
