@@ -1,55 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif; /* Changed to a more modern font */
+}
+
+body {
+    background-color: #f0f2f5; /* Light grey background for the body */
 }
 
 main {
-  background-color: rgb(10, 10, 10);
-  height: 100vh;
+    background-color: #ffffff; /* White background for the main content */
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the main content */
+    border-radius: 10px; /* Rounded corners for the main content */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 2rem; /* Space between columns */
 }
 
-h1, p {
-  font-family: Arial, Helvetica, sans-serif;
+h1,
+p {
+    color: #333333; /* Darker text color for better readability */
+}
+
+h1 span {
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff00ff,
+        #0000ff,
+        #ff0000
+    ); /* Added extra color stop for smooth loop */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%; /* Increased background size for smoother animation */
+    animation: gradient-animation 10s linear infinite; /* Apply the animation */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .about-me {
-  height: 40rem;
-  width: 50rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    grid-column: span 2; /* Span both columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    align-items: center;
+    padding: 4rem;
+    border-radius: 10px;
+    background-color: #e7f3ff; /* Light blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-me-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-me-text {
-  color: white;
-  margin: 2rem;
-  width: 50%;
+    color: #333333;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.about-me-text > p {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+.about-me-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-me-image {
-  box-shadow: 0 0 50px rgb(100, 100, 100);
-  border-radius: 2rem;
-  width: 200px;
-  height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* More quadratic border */
+    overflow: hidden;
+    width: 200px; /* Larger size */
+    height: 200px; /* Larger size */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
 }
 
 .about-me-image img {
-  object-fit: cover;
-  border-radius: 2rem;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%; /* Adjusted position to center the head */
+    width: 100%;
+    height: 100%;
+}
+
+.about-me-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
 .socials {
-  display: flex;
-  margin: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
 }
 
 .socials img {
-  border-radius: 10px;
-  width: 40px;
-  height: 40px;
-  margin: 0 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.socials img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.socials img[alt="GitHub"] {
+    filter: grayscale(100%); /* Make GitHub logo black */
+}
+
+.work-experience,
+.projects,
+.contact-me {
+    grid-column: span 2; /* Span both columns */
+    border-radius: 10px;
+    background-color: #e7f3ff; /* Light blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.work-experience h2,
+.projects h2,
+.contact-me h2 {
+    color: #007bff; /* Vibrant blue color for headings */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.experience,
+.projects-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.experience-item,
+.project {
+    color: #333333;
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: #ffffff; /* White background for items */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    flex: 1 1 calc(33% - 1rem); /* Flex items to take up one-third of the container */
+    box-sizing: border-box;
+}
+
+.experience-item:hover,
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+.project h3 {
+    color: #007bff; /* Vibrant blue color for project titles */
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    color: #333333;
+}
+
+.contact-me p {
+    text-align: center;
+    color: #333333;
+}
+
+.contact-me a {
+    color: #007bff; /* Vibrant blue color for email link */
+    text-decoration: none;
+}
+
+.contact-me a:hover {
+    text-decoration: underline;
 }
