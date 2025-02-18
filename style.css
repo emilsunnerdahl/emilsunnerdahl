@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+:root {
+    --font-color: #333333;
+    --header-color: #007bff;
+    --bg-color: #ffffff;
+    --light-bg-color: #e7f3ff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,24 +17,20 @@
 }
 
 body {
-    background-color: #f0f2f5; /* Light grey background for the body */
+    background-color: var(--bg-color); /* Light grey background for the body */
 }
 
 main {
-    background-color: #ffffff; /* White background for the main content */
+    background-color: var(
+        --bg-color
+    ); /* White background for the main content */
     min-height: 100vh;
-    padding: 2rem;
-    margin: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the main content */
-    border-radius: 10px; /* Rounded corners for the main content */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    gap: 2rem; /* Space between columns */
+    margin: 0; /* Remove margin */
 }
 
 h1,
 p {
-    color: #333333; /* Darker text color for better readability */
+    color: var(--font-color); /* Darker text color for better readability */
 }
 
 h1 span {
@@ -55,15 +60,22 @@ h1 span {
     }
 }
 
+.react,
+.scala,
+.java,
+.python {
+    font-weight: bold;
+    color: var(--header-color); /* React iconic color */
+}
+
 .about-me {
-    grid-column: span 2; /* Span both columns */
+    width: 100%; /* Span the full width */
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two-column layout */
     align-items: center;
     padding: 4rem;
-    border-radius: 10px;
-    background-color: #e7f3ff; /* Light blue background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 5rem 0rem;
+    background-color: var(--light-bg-color); /* Light blue background */
 }
 
 .about-me-left {
@@ -73,8 +85,9 @@ h1 span {
 }
 
 .about-me-text {
-    color: #333333;
+    color: var(--font-color);
     margin: 2rem 0;
+    padding-left: 2rem;
     text-align: center;
 }
 
@@ -90,11 +103,11 @@ h1 span {
 }
 
 .about-me-image {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px var(--shadow-color); /* Subtle shadow */
     border-radius: 10px; /* More quadratic border */
     overflow: hidden;
-    width: 200px; /* Larger size */
-    height: 200px; /* Larger size */
+    width: 250px; /* Larger size */
+    height: 250px; /* Larger size */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
 }
 
@@ -107,7 +120,11 @@ h1 span {
 
 .about-me-image:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    box-shadow: 0 8px 16px var(--hover-shadow-color); /* More pronounced shadow on hover */
+}
+
+.content-container {
+    margin: 4rem;
 }
 
 .socials {
@@ -135,20 +152,31 @@ h1 span {
 .work-experience,
 .projects,
 .contact-me {
-    grid-column: span 2; /* Span both columns */
     border-radius: 10px;
-    background-color: #e7f3ff; /* Light blue background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: var(--light-bg-color); /* Light blue background */
+    box-shadow: 0 4px 8px var(--shadow-color); /* Subtle shadow */
     padding: 2rem;
-    margin-top: 2rem;
+    margin: 3rem;
 }
 
 .work-experience h2,
 .projects h2,
 .contact-me h2 {
-    color: #007bff; /* Vibrant blue color for headings */
+    color: var(--header-color); /* Vibrant blue color for headings */
     margin-bottom: 1rem;
     text-align: center;
+    position: relative;
+}
+
+.work-experience h2::after,
+.projects h2::after,
+.contact-me h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background-color: var(--header-color); /* Same blue color */
+    margin: 0.5rem auto 0; /* Center the underline */
 }
 
 .experience,
@@ -160,12 +188,12 @@ h1 span {
 
 .experience-item,
 .project {
-    color: #333333;
+    color: var(--font-color);
     margin: 0.5rem;
     padding: 1rem;
-    background-color: #ffffff; /* White background for items */
+    background-color: var(--bg-color); /* White background for items */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 4px var(--shadow-color); /* Subtle shadow */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
     flex: 1 1 calc(33% - 1rem); /* Flex items to take up one-third of the container */
     box-sizing: border-box;
@@ -174,25 +202,25 @@ h1 span {
 .experience-item:hover,
 .project:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    box-shadow: 0 8px 16px var(--hover-shadow-color); /* More pronounced shadow on hover */
 }
 
 .project h3 {
-    color: #007bff; /* Vibrant blue color for project titles */
+    color: var(--header-color); /* Vibrant blue color for project titles */
     margin-bottom: 0.5rem;
 }
 
 .project p {
-    color: #333333;
+    color: var(--font-color);
 }
 
 .contact-me p {
     text-align: center;
-    color: #333333;
+    color: var(--font-color);
 }
 
 .contact-me a {
-    color: #007bff; /* Vibrant blue color for email link */
+    color: var(--header-color); /* Vibrant blue color for email link */
     text-decoration: none;
 }
 
