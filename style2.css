@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent-color: #ff3366;
+    --accent-hover: #ff1a53;
+    --card-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --gradient-start: #ff3366;
+    --gradient-end: #ff6b6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+main {
+    min-height: 100vh;
+    margin: 0;
+}
+
+.about-me {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.about-me::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff5f7 0%, #fff 100%);
+    z-index: 0;
+}
+
+.about-me-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-me-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.about-me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 15%;
+}
+
+.about-me-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-me-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-me-text h1 span {
+    color: var(--accent-color);
+    position: relative;
+    display: inline-block;
+}
+
+.about-me-text h1 span::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.about-me-text h1 span:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.about-me-text p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.about-me-text span {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.work-experience,
+.projects,
+.contact-me {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 3rem;
+    margin: 3rem 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    border-radius: 3px;
+}
+
+.experience,
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-item,
+.project {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-item::before,
+.project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover::before,
+.project:hover::before {
+    transform: scaleX(1);
+}
+
+.experience-item:hover,
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.project h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.socials img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.socials img:hover {
+    transform: translateY(-5px);
+    filter: grayscale(0%);
+}
+
+.contact-me a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-me a:hover {
+    color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+    .about-me {
+        padding: 3rem 1rem;
+    }
+
+    .about-me-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-me-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-container {
+        padding: 0 1rem;
+    }
+
+    .work-experience,
+    .projects,
+    .contact-me {
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .experience-item,
+    .project {
+        padding: 1.5rem;
+    }
+
+    .experience,
+    .projects-container {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
