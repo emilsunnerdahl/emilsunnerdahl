@@ -185,7 +185,7 @@ main {
 }
 
 .work-experience,
-.projects,
+.education,
 .contact-me {
     background: var(--card-bg);
     border-radius: 30px;
@@ -197,7 +197,7 @@ main {
 }
 
 .work-experience::before,
-.projects::before,
+.education::before,
 .contact-me::before {
     content: "";
     position: absolute;
@@ -222,7 +222,7 @@ h2 {
 }
 
 .experience,
-.projects-container {
+.education-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -230,7 +230,7 @@ h2 {
 }
 
 .experience-item,
-.project {
+.education-item {
     background: var(--bg-color);
     padding: 2rem;
     border-radius: 20px;
@@ -240,7 +240,7 @@ h2 {
 }
 
 .experience-item::before,
-.project::before {
+.education-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -254,17 +254,18 @@ h2 {
 }
 
 .experience-item:hover::before,
-.project:hover::before {
+.education-item:hover::before {
     opacity: 0.05;
 }
 
 .experience-item:hover,
-.project:hover {
+.education-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px var(--shadow-color);
 }
 
-.experience-item h3 {
+.experience-item h3,
+.education-item h3 {
     color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-size: 1.4rem;
@@ -272,17 +273,17 @@ h2 {
     z-index: 1;
 }
 
-.experience-item p {
+.experience-item p,
+.education-item p {
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
 }
 
-.experience-item p:last-child {
+.experience-item p:last-child,
+.education-item p:last-child {
     margin-bottom: 0;
-    margin-top: 1rem;
-    line-height: 1.6;
 }
 
 .socials {
@@ -346,14 +347,14 @@ h2 {
     }
 
     .work-experience,
-    .projects,
+    .education,
     .contact-me {
         padding: 2rem;
         margin: 2rem 0;
     }
 
     .experience-item,
-    .project {
+    .education-item {
         padding: 1.5rem;
     }
 }
